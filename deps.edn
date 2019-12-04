@@ -1,0 +1,5 @@
+{:aliases {:lint {:extra-deps {com.jameslaverack/cljfmt-runner
+                               {:git/url "https://github.com/JamesLaverack/cljfmt-runner"
+                                :sha "97960e9a6464935534b5a6bab529e063d0027128"}}
+                  :main-opts ["-m" "cljfmt-runner.check"]}
+           :lint/fix {:main-opts ["-m" "cljfmt-runner.fix"]}}}
