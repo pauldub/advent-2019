@@ -24,5 +24,5 @@
 
 (defn generate-passwords []
   (->> password-range
-   (apply range)
-   (filter valid-password?)))
+       (apply range)
+       (filter valid-password?)))

@@ -3,9 +3,9 @@
             [clojure.set :as set]))
 
 (defn parse-move [input]
-   (let [[dir _] (string/split input #"[0-9]")
-         [_ len] (string/split input #"[A-Z]")]
-     [dir (Integer/parseInt len)]))
+  (let [[dir _] (string/split input #"[0-9]")
+        [_ len] (string/split input #"[A-Z]")]
+    [dir (Integer/parseInt len)]))
 
 (defn move-position-cost [[x y cost] [direction length]]
   (->> (range (+ 1 length))
@@ -17,8 +17,8 @@
 
 (defn move-coordinates [line]
   (let [aggregate-positions (fn [positions move]
-            (let [points (move-position-cost (last positions) move)]
-              (concat positions points)))]
+                              (let [points (move-position-cost (last positions) move)]
+                                (concat positions points)))]
     (reduce aggregate-positions [[0 0 0]] line)))
 
 (def input

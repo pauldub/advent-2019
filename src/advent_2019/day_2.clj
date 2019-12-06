@@ -31,8 +31,7 @@
 
 (defn find-solution []
   (let [iterations (into [] (mapcat (fn [x] (map (fn [y] [x y]) (range 100))) (range 100)))]
-    (filter #(= (nth % 0) 19690720)
-            (map (fn [[x y]]
-                   (execute-program program x y))
-                 iterations))))
+    (->> iterations
+         (map (fn [[x y]] (execute-program program x y)))
+         (filter #(= (nth % 0) 19690720)))))
 
